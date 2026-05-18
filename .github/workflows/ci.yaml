@@ -4,8 +4,14 @@ name: CI Pipeline
 on:
   push:
     branches: [main]
+    paths:
+      - 'ops.app/**'
+      - '.github/workflows/ci.yaml'
   pull_request:
     branches: [main]
+    paths:
+      - 'ops.app/**'
+    
 
 env:
   DOCKERHUB_IMAGE: jun1592/gitops-app
