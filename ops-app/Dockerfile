@@ -1,12 +1,12 @@
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 
-COPY pom.xml .
-COPY .mvn .mvn
-COPY mvnw .
-RUN ./mvnw dependency:go-offline -B
+COPY ops-app/pom.xml .
+COPY ops-app/.mvn ./.mvn
+COPY ops-app/mvnw .
 
-COPY src ./src
+RUN ./mvnw dependency:go-offline -B
+COPY ops-app/src ./src
 
 RUN ./mvnw package -DskipTests
 
