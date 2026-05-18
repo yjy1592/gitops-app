@@ -77,8 +77,8 @@ jobs:
 
       - name: Kustomize 설치
         run: |
-          cd $GITHUB_WORKSPACE
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+          sudo chmod +x kustomize
           sudo mv kustomize /usr/local/bin/
 
       - name: dev 이미지 태그 업데이트
