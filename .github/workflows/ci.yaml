@@ -17,7 +17,7 @@ on:
 env:
   DOCKERHUB_IMAGE: jun1592/gitops-app
   CONFIG_REPO: yjy1592/gitops-config
-  CONFIG_REPO_PATH: apps/spring-boot/overlays
+  CONFIG_REPO_PATH: apps/gitops-app/overlays
 
 permissions:
   contents: read
