@@ -49,9 +49,8 @@ jobs:
       - name: Docker 빌드 및 Push
         env:
           IMAGE_TAG: ${{ steps.tag.outputs.tag }}
-        working-directory: ./ops-app
         run: |
-          docker build -t $DOCKERHUB_IMAGE:$IMAGE_TAG .
+          docker build -f ./ops-app/Dockerfile -t $DOCKERHUB_IMAGE:$IMAGE_TAG .
           docker push $DOCKERHUB_IMAGE:$IMAGE_TAG
           docker tag $DOCKERHUB_IMAGE:$IMAGE_TAG $DOCKERHUB_IMAGE:latest
           docker push $DOCKERHUB_IMAGE:latest
