@@ -6,12 +6,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'ops.app/**'
+      - 'ops-app/**'
       - '.github/workflows/ci.yaml'
   pull_request:
     branches: [main]
     paths:
-      - 'ops.app/**'
+      - 'ops-app/**'
     
 
 env:
