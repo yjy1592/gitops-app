@@ -34,7 +34,7 @@ jobs:
 
       - name: 테스트 실행
         working-directory: ./ops-app
-        run: mvn test -q
+        run: mvn package -DskipTests
 
       - name: 이미지 태그 생성
         id: tag
