@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'ops-app2/**'
+      - 'ops-app-2/**'
       - '.github/workflows/ci-ops-app2.yml'
   pull_request:
     branches: [main]
