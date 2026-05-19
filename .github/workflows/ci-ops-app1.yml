@@ -67,7 +67,7 @@ jobs:
       - name: ECR Push
         uses: docker/build-push-action@v5
         with:
-          context: ./ops-app1
+          context: ./ops-app-1
           platforms: linux/amd64
           push: true
           tags: ${{ steps.tag.outputs.uri }}
