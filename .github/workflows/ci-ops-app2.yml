@@ -10,7 +10,7 @@ on:
 
 env:
   APP_NAME: ops-app2
-  ECR_REPOSITORY: ops-app2
+  ECR_REPOSITORY: ops-app-2
   AWS_REGION: ap-northeast-2
   GITHUB_ORG: yjy1592-dev
   CONFIG_REPO: ${{ github.repository_owner }}/gitops-config
