@@ -42,6 +42,7 @@ jobs:
           cache: 'maven'
 
       - name: Maven 테스트
+        working-directory: ./ops-app-1
         run: mvn test -q
 
       - name: 이미지 태그 생성 (Git SHA 7자리)
