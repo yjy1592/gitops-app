@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-24.04
     defaults:
       run:
-        working-directory: ./ops-app2     # 모노리포의 ops-app2 디렉토리
+        working-directory: ./ops-app-2     # 모노리포의 ops-app2 디렉토리
     outputs:
       image-tag: ${{ steps.tag.outputs.tag }}
 
