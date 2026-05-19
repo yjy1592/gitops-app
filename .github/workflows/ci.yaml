@@ -2,23 +2,21 @@
 name: CI Pipeline
 
 on:
-  workflow_dispatch:
-  
   push:
     branches: [main]
     paths:
-      - 'ops.app/**'
+      - 'ops-app/**'
       - '.github/workflows/ci.yaml'
   pull_request:
     branches: [main]
     paths:
-      - 'ops.app/**'
+      - 'ops-app/**'
     
 
 env:
   DOCKERHUB_IMAGE: jun1592/gitops-app
   CONFIG_REPO: yjy1592/gitops-config
-  CONFIG_REPO_PATH: apps/spring-boot/overlays
+  CONFIG_REPO_PATH: apps/gitops-app/overlays
 
 permissions:
   contents: read
@@ -89,7 +87,7 @@ jobs:
         run: |
           cd config-repo/${{ env.CONFIG_REPO_PATH }}/dev
           kustomize edit set image \
-            nginx=jun1592/gitops-app:$IMAGE_TAG
+            gitops-app=jun1592/gitops-app:$IMAGE_TAG
 
       - name: Config Repo 커밋 및 Push
         env:
