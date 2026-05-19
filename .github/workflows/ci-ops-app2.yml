@@ -61,7 +61,7 @@ jobs:
       - name: Docker 빌드 및 Push
         uses: docker/build-push-action@v5
         with:
-          context: ./ops-app2                      # 모노리포 경로 명시
+          context: ./ops-app-2                      # 모노리포 경로 명시
           push: true
           tags: |
             ${{ env.DOCKERHUB_IMAGE }}:${{ steps.tag.outputs.tag }}
