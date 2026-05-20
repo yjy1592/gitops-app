@@ -86,7 +86,13 @@ jobs:
 
       - name: Kustomize 설치
         run: |
-          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+          # 1. 깃허브에서 검증된 v5.4.2 버전의 실행 파일을 직접 다운로드합니다.
+          curl -Lo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64
+        
+          # 2. 다운로드한 파일에 '실행 권한(x)'을 부여합니다.
+          chmod +x kustomize
+        
+          # 3. 전 세계 어디서든 kustomize 명령어를 쓸 수 있게 시스템 폴더로 옮깁니다.
           sudo mv kustomize /usr/local/bin/
 
       - name: dev overlay 이미지 업데이트
