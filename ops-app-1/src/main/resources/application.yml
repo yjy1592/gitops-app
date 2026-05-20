@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ops-app-1
+    name: ops-app1
   thymeleaf:
     prefix: classpath:/templates/
     sufix: .html

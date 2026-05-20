@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ops-app-2
+    name: ops-app2
 
 server:
   port: 8081
