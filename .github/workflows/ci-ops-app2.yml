@@ -86,16 +86,13 @@ jobs:
 
       - name: Kustomize 설치
         run: |
+          sudo rm -f /usr/local/bin/kustomize
+        
+          # 공식 안전한 주소로 다시 다운로드합니다.
           curl -Lo kustomize.tar.gz https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz
-        
-          # 2. 압축을 안전하게 풉니다.
           tar -xvf kustomize.tar.gz
-        
-          # 3. 실행 권한을 주고 시스템 폴더로 옮깁니다.
           chmod +x kustomize
           sudo mv kustomize /usr/local/bin/
-        
-          # 4. 잔해 파일을 청소합니다.
           rm kustomize.tar.gz
 
       - name: dev overlay 이미지 업데이트
